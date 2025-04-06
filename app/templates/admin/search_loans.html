@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Loans</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto bg-white shadow p-6 rounded">
+    <h2 class="text-xl font-bold mb-4">🔍 Search Loans</h2>
+    <form method="get" class="flex gap-2 mb-6">
+      <input type="number" name="borrower_id" placeholder="Borrower ID" class="border p-2 rounded w-1/3">
+      <input type="text" name="status" placeholder="Status (Approved/Disbursed)" class="border p-2 rounded w-1/3">
+      <input type="number" name="min_amount" placeholder="Min Amount" class="border p-2 rounded w-1/3">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Filter</button>
+    </form>
+    <table class="w-full border text-sm">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-3 py-2">Loan ID</th>
+          <th class="border px-3 py-2">Borrower</th>
+          <th class="border px-3 py-2">Amount</th>
+          <th class="border px-3 py-2">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for loan in loans %}
+        <tr>
+          <td class="border px-3 py-2">{{ loan.id }}</td>
+          <td class="border px-3 py-2">{{ loan.borrower_id }}</td>
+          <td class="border px-3 py-2">₹{{ loan.loan_amount }}</td>
+          <td class="border px-3 py-2">{{ loan.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

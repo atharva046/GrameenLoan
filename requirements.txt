@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+jinja2
+sqlalchemy
+pydantic
+python-multipart
+aiofiles
+easyocr
+opencv-python
+Pillow
+scikit-learn
+pandas
+numpy
+xhtml2pdf
+httpx
+googletrans==4.0.0rc1
+python-dotenv

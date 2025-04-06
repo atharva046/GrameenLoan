@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Dashboard</title>
+  <link href="/static/tailwind.css" rel="stylesheet">
+</head>
+{% extends "admin/base_admin.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">📊 Admin Dashboard</h1>
+
+<!-- stats + recent table as before -->
+{% endblock %}
+
+<body class="bg-gray-100 text-gray-900">
+  <div class="p-6 max-w-4xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">NBFC Admin Dashboard</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded shadow">Total Borrowers: {{ total_borrowers }}</div>
+      <div class="bg-white p-4 rounded shadow">Total Loans: {{ total_loans }}</div>
+      <div class="bg-white p-4 rounded shadow">Disbursed Loans: {{ disbursed }}</div>
+    </div>
+  </div>
+</body>
+</html>

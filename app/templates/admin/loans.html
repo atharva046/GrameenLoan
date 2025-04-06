@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Overview</title>
+  <link href="/static/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 p-6">
+  <h2 class="text-xl font-semibold mb-4">All Loans</h2>
+  <table class="min-w-full bg-white border">
+    <thead>
+      <tr>
+        <th class="border px-4 py-2">Loan ID</th>
+        <th class="border px-4 py-2">Borrower ID</th>
+        <th class="border px-4 py-2">Amount</th>
+        <th class="border px-4 py-2">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for loan in loans %}
+      <tr>
+        <td class="border px-4 py-2">{{ loan.id }}</td>
+        <td class="border px-4 py-2">{{ loan.borrower_id }}</td>
+        <td class="border px-4 py-2">₹{{ loan.loan_amount }}</td>
+        <td class="border px-4 py-2">{{ loan.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

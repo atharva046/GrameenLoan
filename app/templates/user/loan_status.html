@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Status</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white shadow rounded p-6">
+    {% if success == 'kyc' %}
+  <div class="mb-4 px-4 py-3 text-green-800 bg-green-100 border border-green-300 rounded">
+    ✅ KYC submitted successfully!
+  </div>
+{% endif %}
+
+    {% if borrower %}
+      <h2 class="text-2xl font-bold mb-4">Hello, {{ borrower.name }}</h2>
+
+      {% if loan %}
+        <p class="mb-2"><strong>Status:</strong> {{ loan.status }}</p>
+        <p class="mb-2"><strong>Loan Amount:</strong> ₹{{ loan.loan_amount }}</p>
+        <p class="mb-2"><strong>Tenure:</strong> {{ loan.tenure_months }} months</p>
+        <p class="mb-2"><strong>Interest Rate:</strong> {{ loan.interest_rate }}%</p>
+        <p class="mb-2"><strong>Monthly EMI:</strong> ₹{{ loan.emi_amount }}</p>
+        <p class="mb-2"><strong>Auto Debit Linked:</strong> {{ 'Yes' if loan.auto_debit_linked else 'No' }}</p>
+        <p class="mb-2"><strong>UTR ID:</strong> {{ loan.utr_id or 'Pending' }}</p>
+      {% else %}
+        <p class="text-red-600">No loan found for this borrower.</p>
+      {% endif %}
+
+    {% else %}
+      <p class="text-red-600">Borrower not found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
