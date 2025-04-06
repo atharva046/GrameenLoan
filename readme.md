@@ -64,36 +64,7 @@ GrameenLoan is an AI-powered, end-to-end microfinance platform designed to help 
 
 ## 📦 Folder Structure
 
-```
-grameenloan/
-├── app/
-│   ├── main.py
-│   ├── models.py
-│   ├── database.py
-│   ├── schemas.py
-│   ├── routes/
-│   │   ├── kyc.py
-│   │   ├── score.py
-│   │   ├── loan.py
-│   │   ├── bot.py
-│   │   ├── user_ui.py
-│   │   ├── admin_ui.py
-│   ├── services/
-│   │   ├── ocr_service.py
-│   │   ├── ai_score.py
-│   │   ├── loan.py
-│   └── templates/
-│       ├── home.html
-│       ├── user/
-│       │   ├── kyc.html, score.html, loan_result.html, ...
-│       └── admin/
-│           ├── dashboard.html, search_loans.html, ...
-├── train_model.ipynb
-├── requirements.txt
-├── README.md
-```
 
----
 
 ## 🚀 Getting Started
 
@@ -164,7 +135,3 @@ MIT License — Free to use with attribution 🙌
 
 ## 💬 Made with ❤️ to power rural Bharat
 ```
-
----
-
-Let me know if you want this converted into a downloadable file or hosted on GitHub!
